@@ -1,0 +1,24 @@
+#로컬레퍼지토리 생성
+git init 
+
+#스테이징 (버전관리할 파일 지정)
+git add
+
+#레퍼지토리상태보기
+git status
+#커밋이력
+git log
+
+git commit -m "메세지"
+
+#로컬 레포지토리와 리모트 연결 
+#최초 한번만 하면 된다.
+git remote add origin https://github.com/choizaewoo/WEB.git
+
+#리모트 연결 확인
+git remote -v
+
+#리모트 origin에 로컬 master를 푸시하겠다.
+git push -u origin master
+
+git branch -M master main
