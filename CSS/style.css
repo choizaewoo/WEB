@@ -1,0 +1,49 @@
+div {
+    background-color: aqua;
+    height: 300px;
+}
+
+body {
+    background-color: black;
+    /* 구글 폰트를 body에 넣으면 전체 적용이 가능함 */
+    font-family: 'Signika Negative', sans-serif;
+}
+
+p {
+    color: blue;
+}
+
+/* class 셀렉터 */
+.red-text {
+    color: red;
+}
+
+/* css만지는 디자이너가 만들어놓음 */
+
+.yellow-text {
+    color: yellow;
+}
+
+.big-size {
+    font-size: 100px;
+}
+
+.border {
+    border-style: solid;
+    border-width: 5px;
+}
+
+/* id 셀렉터 */
+#div1 {
+    background-color: tomato;
+}
+
+/* a 태그 없애버릴 거야 (밑줄 없애려고)*/
+a {
+    text-decoration: none;
+    color: grey;
+}
+
+a:hover {
+    color: white;
+}
