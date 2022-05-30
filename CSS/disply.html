@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+</head>
+<body>
+    <style>
+        /* block : 가로로ㅗ 꽉참, inline: 자기자신의 크기를 가짐 */
+        /*  */
+        span{
+            display: block;
+            width: 100px;
+            height: 50px;
+        }
+        /* div{
+            display: inline;
+        } */
+
+
+        /* div태그이면서 div1만 가져옴 */
+/* inline-block  : 크기를 설정할 수 있음 */
+        div.div1 {
+            /* 테두리 */
+            margin: 25px;
+            /* 안쪽여백 */
+            padding: 25px;
+            background-color: yellow;
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+        }
+        /* inline은 크기를 설정할 수 없음 */
+       /* absolute : 가장 가까은 position 속성이 static이 아닌 tag 기준(화면기준)  */
+       /* relative : 원래 위치 기준 */
+        div.div2 {
+            display: inline;
+            width: 300px;
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            background-color: pink;
+            
+
+        }
+    </style>
+    <!-- div.div1 (빨리쓰는 방법)-->
+    <div class="div1">div1</div> 
+    <!-- .div2 -->
+    <div class="div2">div2</div>
+    <div>div</div>
+    <div>div</div>
+    <span>span</span>
+    <span>span</span>
+    <h1>h1</h1>
+    <h1>h1</h1>
+    <!-- div랑 같다 -->
+    <div id="header"></div>
+    <header>header</header>
+    <footer>footer</footer>
+</body>
+</html>
