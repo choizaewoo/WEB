@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <button onclick="greeting()">인사</button>
+    <script>
+
+        // const 상수
+        const NUM = 10;
+
+         // var 변수는 쓰면 안됨.
+        let i =10;
+        i = 20;
+        console.log(i);
+
+        let num = 10;
+        // num = 'hello';  타입이 중간에 바뀌어버림
+        let text = 'Hello';
+        // text = 10; 타입이 중간에 밥뀌어 버림 
+
+        // 문자열 병합
+        let name  = '최재우';
+        let age = 42;
+        let result = name + '는' + age + '살입니다';
+        result  = `${name}는 ${age}살입니다.`;
+
+
+        let items = [1,2,3,4];
+        for (var j=0; j < items.length; j++) {
+            console.log(items[i]);
+        }
+
+        for (let  item in items) {
+            console.log(item)
+        }
+
+        function myFunc(num) {
+            console.log(num);
+        }
+
+        //object
+        let person = {
+            name: 'choizaewoo',
+            age: 42
+        };
+
+        console.log(person);
+
+    </script>
+    
+</body>
+</html>
