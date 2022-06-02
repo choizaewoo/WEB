@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <form name=fom>
+        <fieldset>
+            <legend>회원가입</legend>
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td>PW<br>
+                    </td>
+                    <td><input type="password" id="pwd" name="pwd"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td><input type="radio" value="male" name="gender" class="gender">남 <input type="radio"
+                            value="female" name="gender" class="gender">여</td>
+                </tr>
+
+                <tr>
+                    <td>직업</td>
+
+                    <td>
+                        <select name="job" >
+                          <option value="none"></option>
+                          <option value="college">대학생</option>
+                          <option value="mom">주부</option>
+                          <option value="backjo">백조</option>
+                          <option value="backsu">백수</option>
+                        </select>
+                    </td>
+
+
+                </tr>
+
+                <tr>
+                    <td>취미</td>
+                    <td><input type="checkbox" value="sport" name="hobby" class="hobby">운동
+                        <input type="checkbox" value="trip" name="hobby" class="hobby">여행
+                        <input type="checkbox" value="read" name="hobby" class="hobby">독서
+                        <input type="checkbox" value="listening" name="hobby" class="hobby">음악감
+                        <input type="checkbox" value="watching" name="hobby" class="hobby">영화감상
+                        <input type="checkbox" value="camping" name="hobby" class="hobby">캠핑
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><input type="button" id="signup" value="회원가입"> <input type="reset" value="취소">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+    <script>
+
+        window.addEventListener('load', function () {
+            var signup = document.querySelector('#signup');
+
+            //signup버튼을 클릭했을때
+            signup.addEventListener('click', function () {
+
+
+                //이메일 정규식 체그 
+                function email_check(email) {
+                    var reg = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+                    return reg.test(email);
+                }
+
+                // 객체 셋팅  
+                var email = $("#email").val();
+                var id = document.querySelector('#id');
+                var pw1 = document.querySelector('#pwd');
+                var gender = document.querySelectorAll(".gender");
+                var hobby = document.querySelectorAll(".hobby");
+
+                //성별 검사
+
+                var genderVal = false;
+                for (var i = 0; i < gender.length; i++) {
+                    //성별을 검사하면서 한개라도 체크가되어있다면
+                    if (gender[i].checked) {
+                        //true를 셋팅
+                        genderVal = true;
+                    }
+                }
+
+                //취미 검사
+                var hobby = document.querySelectorAll(".hobby");
+                //취미가 3개이상 체크가 되었는지 카운트
+                var count = 0;
+                for (var k = 0; k < hobby.length; k++) {
+                    //취미 체크 검사중 체크되어있는게 있으면
+                    if (hobby[k].checked) {
+                        //카운트 증가
+                        count++;
+                    }
+                }
+
+                // 전체 검사
+                if (email == "") {
+                    alert("이메일을 입력해주세요.");
+                    return false;
+                } else if (!email_check(email)) {
+                    alert("이메일 형식에 맞게 입력해주세요");
+                    return false;
+                }
+                else if (pwd.value.length < 5 || isNaN(pwd.value)) {
+                    alert('비밀번호를 숫자 다섯자리 이상 입력하세요.');
+                    //비밀번호 포커스
+                    pwd.focus();
+                    // 비밀번호가 처음입력한 값과 다를시
+                } else if (genderVal == false) {
+                    alert("성별을 체크해주세요!");
+                    gender[0].focus();
+                    // 취미가 3개이상 체크되지 않았을시
+                } else if (count < 3) {
+                    alert("취미를 3개이상 체크해주세요.");
+                    hobby[0].focus();
+                } else {
+                    alert('회원가입이 완료되었습니다.');
+                }
+
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
