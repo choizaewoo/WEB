@@ -51,7 +51,7 @@
   <script>
     let text = prompt('텍스트 값을 입력해 주세요');
     if (text === '') {
-      text = prompt('입력해주세요');
+      text = prompt('입력해주세요.');
     }
 
     // top level 변수
@@ -63,7 +63,7 @@
 
     function changeColor(color) {
       alert(`${color}색으로 변경됩니다.`);
-      // let $text = document.getElementById('text');
+      // let $text = document.getElementById('text');    
       $text.css('color', color);
     }
 
