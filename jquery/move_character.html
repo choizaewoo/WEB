@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <style>
+        #container {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border: 1px black solid;
+            left: 30%;
+            top: 20%;
+        }
+
+        #lion {
+            position: relative;
+            left: 200px;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+    <div id="container">
+        <img id="lion" src="/assets/lion.gif" alt="lion">
+    </div>
+
+
+    <script>
+        let lion = $('#lion');
+        const GAME_WIDTH = 600;
+        const GAME_HEIGHT = 600;
+        const MOVE = 25;
+        const LION_HEIGHT = 100;
+        const LION_WIDTH = 100;
+
+
+
+        $('body').keydown(function (event) {
+            let top = Number(lion.css('top').replace('px', ''));
+            let bottom = top + LION_HEIGHT;
+            let left =  Number(lion.css('left').replace('px', ''));
+            let right = left + LION_WIDTH;
+            console.log(top);
+
+            switch (event.key) {
+                case 'ArrowUp':
+                 if  (top - MOVE <  0) {
+                    return;
+                 }
+                    lion.css({ top: '-=25px' });
+                    break;0
+                case 'ArrowDown':
+                if  (bottom + MOVE > GAME_HEIGHT) {
+                    return;
+                 }
+                    lion.css({ top: '+=25px' });
+                    break;
+                case 'ArrowLeft':
+                if  (left - MOVE < 0) {
+                    return;
+                 }
+                    lion.css({ left: '-=25px' });
+                    break;
+                case 'ArrowRight':
+                if  (right + MOVE >  GAME_WIDTH) {
+                    return;
+                 }
+                    lion.css({ left: '+=25px' });
+                    break;
+            }
+        })
+
+    </script>
+</body>
+
+</html>
