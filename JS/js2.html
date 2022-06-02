@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="init()">
+    <style>
+        .small-text {
+            font-size: small;
+        }
+
+        .big-text {
+            font-size: xx-large;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+
+
+
+    <div id="target" class="small-text">Hello</div>
+    <div id="target" class="big-text">Hello</div>
+    <!-- 함수선언 -->
+    <button onclick="changeStyle()">스타일 변경</button>
+    <button onclick="changeClass()">클래스 변경</button>
+    <button id="my_button">코드로 이벤트 연결</button>
+
+
+    <ul>
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+    </ul>
+
+
+
+    <div id="box" onmouseover="onMouseOver()" onmouseleave="onMouseLeave()"></div>
+
+    <script>
+        function onMouseOver() {
+            console.log('onMouseOver!!!!');
+        }
+
+        function onMouseLeave() {
+            console.log('onMouseLeave!!!!');
+        }
+
+
+        function init() {
+            console.log('init!!!!!!!!');
+            //이벤트 작성
+            let $button = document.getElementById('my_button');
+            $button.addEventListener('click', function()  {
+                console.log('click!!!!!!!!!!');
+            });
+        }
+
+
+
+        //함수선언
+        function changeStyle() {
+            let $target = document.getElementById('target')
+            $target.style.color = 'red'
+
+        }
+        function changeClass() {
+            let $target = document.getElementById('target')
+            $target.className = 'big-text'
+
+        }
+
+
+
+
+
+
+        // DOM 객체에 접근
+        // $가 붙으면 DOM객체다.
+
+        let $target = document.getElementById('target')
+
+
+        //css셀렉터 그대로 활용할 수 있다.
+        document.querySelector('#target')
+        document.querySelectorAll('.small-text')
+        document.querySelectorAll('button')
+
+
+
+
+
+        // document.write('hello world<br>' );  
+        // document.write('hello world' );
+
+        console.log('body 완료!!!!!!!')
+    </script>
+</body>
+
+</html>
