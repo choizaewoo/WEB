@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<style>
+    table,
+    tr,
+    th,
+    td {
+        border: 1px black solid;
+    }
+
+    table {
+        width: 600px;
+    }
+</style>
+    <!-- table>tr*7>td*3 -->
+    <table>
+        <tr>
+            <th>
+                <input type="checkbox" name="all" id="all"> 확인 
+            </th>
+            <th>제목</th>
+            <th>글쓴시간</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="chk" checked id=""></td>
+            <td>1111</td>
+            <td>11:11:00</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="chk" id=""></td>
+            <td>2222</td>
+            <td>11:11:00</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="chk" id=""></td>
+            <td>asdasasd</td>
+            <td>11:11:00</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="chk" id=""></td>
+            <td>asdas121</td>
+            <td>11:11:00</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="chk" id=""></td>
+            <td>assdasdddd</td>
+            <td>11:11:00</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="chk" id=""></td>
+            <td>12312312344dd</td>
+            <td>11:11:00</td>
+        </tr>
+    </table>
+
+    <div>
+        <input id="log_button" type="button" value="로그">
+    </div>
+
+    <script>
+        //$('#log_button').val() // value 값 읽기 
+         //$('#log_button').val(바뀌낭~) // value 값 쓰기
+
+         $('#log_button').click(function () {
+             //input 태그 중에서 checkbox 타입 중에 name 이 chk 인 것만 골라라
+             let $checkboxes = $('input:checkbox[name=chk]:checked');
+             console.log(`체크 박스 수 : ${checkboxes.length}`);
+
+             // checked 된 것만 고르기
+             console.log($('input:checkbox[name=chk]:checked').length);
+            //name 이 chk 인 체크박스의 속성 checked를 붙여라 (전체 선택)
+             $('input[namme=chk]:checkbox').prop('checked', true);
+
+             //체크된 것이  있는지  ?
+             if ($('input:checkbox[name=chk]:checked').length  > 0) {
+
+             }
+
+             //내부 순환
+             $('input[namme=chk]:checkbox').each(function() {
+                 console.log('!!');
+                 console.log(this);
+                //  this.checked = true;
+                 console.log($('this'));
+                 $(this).prop('checked', true);
+
+                 
+
+             });
+
+
+
+             for (let i  = 0; i <  $('input:checkbox[name=chk]:checked' ).length
+         })
+    </script>
+</body>
+
+</html>

@@ -1,72 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
+
 <body>
+    <!-- #455C9F -->
+    <!-- #E6E7EA -->
     <style>
-        .container {
-            width: 220px;
-            height: 450px;
-            position: relative;
-            
+        #header {
+            background-color: #455C9F;
+            color: white;
+            padding: 10px;
         }
-    
-    #header {
-        background-color:royalblue;
-        position: relative;
-        color: white;
-        width: 220px;
-        height: 30px;
-        padding-top: 10px;
-        padding-left: 10px;
-    }
-    .content {   
-        background-color:gainsboro;
-        position: absolute;
-        width: 220px;
-        height: 200px;
-        padding-top: 10px;
-        padding-left: 10px;
-    }
 
-    .item1 {
-        display: inline-block;
-        background-color: white;
-        position: absolute;
-        background-size: 100px;
-        width: 170px;
-        height: 40px;
-        top:40px;
-        left:20px;
-        
-    }
+        .content {
+            padding: 10px;
+            background-color: #E6E7EA;
+        }
 
-    .item2 {
-        position: absolute;
+        .item {
+            background-color: white;
+            margin: 10px;
+        }
 
-        display: inline-block;
-        background-color: white; 
-        width: 170px;
-        height: 20px;
-        top:95px;
-        left:20px;
-    
-
-    }
-
-    .item3 {
-        position: absolute;
-
-        background-color: white;
-        width: 170px;
-        height: 40px;
-        top:130px;
-        left:20px;    
-    }
+        .container {
+            width: 200px;
+        }
     </style>
 
     <div class="container">
@@ -74,20 +40,29 @@
             최도근님, 안녕하세요?
         </div>
         <div class="content">
-            페이스북 색감 따라하기
-         <div class="item1">
-            <b>박지성</b> SBS에서 월드컵보세요!
+            페이스북 색감따라하기
+            <div class="item">
+                <b>박지성</b> SBS에서 월드컵보세요!
+            </div>
+            <div class="item">
+                <b>안정환</b> MBC죠...
+            </div>
+            <div class="item">
+                <b>이영표</b> KBS는 수신료의 가치를..
+            </div>
         </div>
-        <div class="item2">
-            <b>안정환</b> MBC죠...
-        </div>
-        <div class="item3">
-            <b>이영표</b> KBS는 수신료의 가치를...
-        </div>
+    </div>
 
-        </div>    
+    <button id="add_button">등록하기</button>
+
+    <script>
+        $('#add_button').click(function () {
+            let text = prompt('기사 내용');
+
+            $('.content').append(`<div class="item">${text}</div >`);
+        });
+    </script>
 
 </body>
-</html>
 
-<!-- 페이스북 만들기 -->
+</html>
