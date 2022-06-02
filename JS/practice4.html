@@ -22,16 +22,18 @@
         <button id="menu2" style= "background-color: grey; color: white; WIDTH: 150pt; HEIGHT: 50pt;" onclick="changeMenu2()">css</button>
         <button id="menu3" style= "background-color: grey; color: white; WIDTH: 150pt; HEIGHT: 50pt;" onclick="changeMenu3()">javascript</button><br>
 
+    </center>    
+
     <script>
 
-        const mode = document.getElementById("menu1");
-        mode.addEventListener("click", function() {
-        if (mode.innerText === "html") {
-            mode.innerText = "css";
+        const mode1 = document.getElementById("menu1");
+        mode1.addEventListener("click", function() {
+        if (mode1.innerText === "html") {
+            mode1.innerText = "css";
         } else {
-            mode.innerText = "html";
+            mode1.innerText = "html";
         } 
-        
+
         });
 
         const mode2 = document.getElementById("menu2");
@@ -52,23 +54,24 @@
         } 
         });
 
-
         
         function changeMenu1() {
             let $menu1 = document.getElementById('menu1')
-            $menu1.style.color = 'white'
-
-
+            $menu1.style.color = 'black'
+            $menu1.style.backgroundColor = 'white'
+            
+            
         }
         function changeMenu2() {
             let $menu2 = document.getElementById('menu2')
-            $menu2.style.color = 'white'
-
+            $menu2.style.color = 'black'
+            $menu2.style.backgroundColor = 'white'
 
         }
         function changeMenu3() {
             let $menu3 = document.getElementById('menu3')
-            $menu3.style.color = 'white'
+            $menu3.style.color = 'black'
+            $menu3.style.backgroundColor = 'white'
 
         }
 
