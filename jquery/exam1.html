@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <form name=fom>
+    <form name=form>
         <fieldset>
             <legend>회원가입</legend>
             <table>
@@ -52,7 +52,7 @@
                     <td><input type="checkbox" value="sport" name="hobby" class="hobby">운동
                         <input type="checkbox" value="trip" name="hobby" class="hobby">여행
                         <input type="checkbox" value="read" name="hobby" class="hobby">독서
-                        <input type="checkbox" value="listening" name="hobby" class="hobby">음악감
+                        <input type="checkbox" value="listening" name="hobby" class="hobby">음악감상
                         <input type="checkbox" value="watching" name="hobby" class="hobby">영화감상
                         <input type="checkbox" value="camping" name="hobby" class="hobby">캠핑
                     </td>
@@ -120,16 +120,16 @@
                     return false;
                 }
                 else if (pwd.value.length < 5 || isNaN(pwd.value)) {
-                    alert('비밀번호를 숫자 다섯자리 이상 입력하세요.');
+                    alert('비밀번호를 오직 숫자로만 다섯자리 이상 입력하세요.');
                     //비밀번호 포커스
                     pwd.focus();
                     // 비밀번호가 처음입력한 값과 다를시
                 } else if (genderVal == false) {
-                    alert("성별을 체크해주세요!");
+                    alert("성별을 체크해주세요.");
                     gender[0].focus();
                     // 취미가 3개이상 체크되지 않았을시
                 } else if (count < 3) {
-                    alert("취미를 3개이상 체크해주세요.");
+                    alert("취미를 3개 이상 체크해주세요.");
                     hobby[0].focus();
                 } else {
                     alert('회원가입이 완료되었습니다.');
