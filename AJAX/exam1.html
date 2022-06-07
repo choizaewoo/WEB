@@ -8,8 +8,14 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="loadData()">
     <script>
+
+        // 위에 바디태그로 쓰냐 이걸로 쓰냐 둘중 하나만 쓰면됨.
+        // $(function () {
+        //     loadData();
+
+        // })
 
     function loadData() {
         fetch('https://jsonplaceholder.typicode.com/todos/1')
@@ -17,7 +23,6 @@
         .then(json => {
         
             $('#list').append(`<li>${json.title}</li>`);
-
 
         });
     }
