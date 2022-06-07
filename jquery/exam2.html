@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<style>
+    .checkBox {
+        width: 70px;
+        height: auto;
+        text-align: center;
+    }
+
+    .title {
+        width: 250px;
+        height: auto;
+        text-align: center;
+    }
+
+    .writingTime {
+        width: 100px;
+        height: auto;
+        text-align: center;
+    }
+
+    td#checkBoxHeader {
+        width: 70px;
+        height: auto;
+        text-align: center;
+    }
+
+    td#titleHeader {
+        width: 250px;
+        height: auto;
+        text-align: center;
+    }
+
+    td#writingTimeHeader {
+        width: 100px;
+        height: auto;
+        text-align: center;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    button {
+        position: relative;
+        left: 330px;
+        top: 20px;
+        width: 100px;
+        height: 30px;
+    }
+</style>
+<script>
+    $(function () {
+        $('#checkBoxHeader').click(function () {
+            if ($(':checkbox[id=checkBoxHeader]').is(':checked') == true) {
+                $(':checkbox[name=mycheck]').each(function () {
+                    this.checked = true;
+                });
+            } else {
+                $(':checkbox[name=mycheck]').each(function () {
+                    this.checked = false;
+                });
+            }
+        });
+
+        $('#logButton').click(function () {
+            $(':checkbox[name=mycheck]').each(function () {
+                if (this.checked) {
+                    let index = $(':checkbox[name=mycheck]').index(this);
+                    console.log(`${$(".title")[index].textContent}`);
+                }
+            });
+        });
+    });
+</script>
+
+
+<body>
+    <table>
+        <tr>
+            <td id="checkBoxHeader"><input type="checkbox" name="확인" id="checkBoxHeader"><label
+                    for="checkBoxHeader">확인</label>
+            </td>
+            <td id="titleHeader">제목</td>
+            <td id="writingTimeHeader">글쓴시간</td>
+        </tr>
+        <tr>
+            <td class="checkBox"><input type="checkbox" name="mycheck"></td>
+            <td class="title">아니 요즘 세상에 누가</td>
+            <td class="writingTime">11:44:00</td>
+        </tr>
+        <tr>
+            <td class="checkBox"><input type="checkbox" name="mycheck"></td>
+            <td class="title">대도시의 사랑꾼</td>
+            <td class="writingTime">16:10:42</td>
+        </tr>
+        <tr>
+            <td class="checkBox"><input type="checkbox" name="mycheck"></td>
+            <td class="title">우리가 우리를 우리라고 부를 때</td>
+            <td class="writingTime">19:18:08</td>
+        </tr>
+        <tr>
+            <td class="checkBox"><input type="checkbox" name="mycheck"></td>
+            <td class="title">없어</td>
+            <td class="writingTime">14:17:26</td>
+        </tr>
+        <tr>
+            <td class="checkBox"><input type="checkbox" name="mycheck"></td>
+            <td class="title">만들어보자</td>
+            <td class="writingTime">12:18:16</td>
+        </tr>
+        <tr>
+            <td class="checkBox"><input type="checkbox" name="mycheck"></td>
+            <td class="title">흐흐흠</td>
+            <td class="writingTime">23:13:50</td>
+        </tr>
+    </table>
+    <button id="logButton">로그</button>
+
+</body>
+
+</html>
