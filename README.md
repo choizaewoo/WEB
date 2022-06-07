@@ -1,5 +1,5 @@
 My GitHub HomePage: https://choizaewoo.github.io/
-https://choizaewoo.github.io/web/game/js/pt.html
+게임 :   https://choizaewoo.github.io/web/game/js/pt.html
 
 
 
