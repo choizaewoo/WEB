@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function loadDoc(){
+            //XMLHttpRequest 생성 (뭔지 모르겠지만 만듦)
+            let xhttp = new XMLHttpRequest();
+            //XMLHttpRequest 객체 안에다가 응답이 왔을 때 callback 함수를 정의해주는 거다.
+            xhttp.onreadystatechange = function ()  {
+                //this는 xhttp를 가리킨다. 200은 
+                //this.readystate == 4 : 정상완료 (응답이 왔으면)
+                //this.status ==  200 : 서버 입장에서 '성공' 이라고 정한 것임. 그냥 성공. /  200은 서버에서 주는 값...
+                //this.status == 404  : 서버 입장에서 '파일을 못 찾은 경우' 라고  정한 것임.   
+                //서버쪽에서 정해주는 값을 if문으로 설정해줘야함.
+                if (this.readyState ==  4 && this.status ==  200){
+                    document.getElementById("demo").innerHTML = 
+                    this.responseText;
+                }
+            };
+            //통신 방식이나 대상을 설정
+            //방식 : GET(읽기), POST(쓰기), PATCH, DELETE, ...
+            //GET방식~
+            xhttp.open("GET", "ajax_info.txt", true);
+            xhttp.send();
+        }
+    </script>
+    <div id="demo"></div>
+    <button onclick="loadDoc()">get data</button>
+</body>
+</html>
