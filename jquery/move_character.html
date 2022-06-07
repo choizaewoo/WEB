@@ -46,6 +46,7 @@
 
 
         $('body').keydown(function (event) {
+            consol  e.log(event.key);
             let top = Number(lion.css('top').replace('px', ''));
             let bottom = top + LION_HEIGHT;
             let left =  Number(lion.css('left').replace('px', ''));
