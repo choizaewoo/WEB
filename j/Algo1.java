@@ -11,9 +11,13 @@ public class Algo {
 			strs[i] = in.next();
 
 		System.out.print("Hello ");
-		
-		for (int i = 0; i < number; i++)
-			System.out.print(strs[i]+ ".");
-	}
-}
 
+		for (int i = 0; i < number-1; i++) {
+			System.out.print(strs[i] + ",");
+
+		}
+		
+		System.out.print(strs[number-1] + ".");
+		}
+
+}
